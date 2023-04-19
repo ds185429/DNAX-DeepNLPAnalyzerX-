@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PAT</title>
+    <script src="../static/js/jq.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../static/css/bootstarpmin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script src="../static/js/bootstrapmin.js"></script>
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        select {
+            width: 300px;
+            border: 1px solid #1b1b1b;
+            padding: 3.5px;
+            margin-top: 10px;
+        }
+
+        input[type='file'] {
+            width: 300px;
+            border: 1px solid #1b1b1b;
+            padding: 1px;
+            margin-top: 10px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+        }
+
+        .box {
+            position: fixed;
+            top: 65px;
+            left: 65px;
+            margin: 0;
+            width: calc(100% - 70px);
+            height: calc(100% - 70px);
+            box-sizing: border-box;
+            border: 1px solid #dadce0;
+            background-color: whitesmoke;
+            padding: 40px;
+            overflow-y: scroll;
+        }
+
+        h3 {
+            color: #1b1b1b;
+        }
+
+        h2 {
+            border-left: 5px solid #54b948;
+            padding-left: 5px;
+            font-size: 30px;
+        }
+
+        a {
+            color: #1b1b1b;
+            text-decoration: none;
+        }
+    </style>
+    <style>
+.sidenav {
+  height: 100%;
+  position: fixed;
+    z-index: 10;
+  top: 60px;
+  left: 0;
+  width: 60px;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+
+.sidenav a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f1f1f1;
+  display: block;
+  transition: 0.5s;
+    white-space: nowrap;
+}
+
+.sidenav a:hover {
+    border-left: 5px solid white;
+}
+
+.tname
+{
+    padding-left:10px ;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+
+</head>
+<body>
+<div style="background-color:#4fb94a">
+    <a href="index" style=""><img src="../static/img/ncr-logo.jpeg" style="height: 60px;width: auto"/></a>
+</div>
+<div id="mySidenav" class="sidenav" onmouseover="openNav()" onmouseleave="closeNav()">
+    <a href="index"><i class="fa fa-user" style="padding: 5px;padding-left:10px;width: 30px"></i><span class="tname">Dashboard</span></a>
+    <a href="add-update"><i class="fa fa-files-o" style="padding: 5px;width: 30px"></i><span class="tname">Config Files</span></a>
+    <a href="test"><i class="fa fa-flask" style="padding: 5px;width: 30px"></i><span class="tname">PAT</span></a>
+    <a href="logout"><i class="fa fa-sign-out" style="padding: 5px;width: 30px"><span class="tname">Logout</span></i></a>
+</div>
+<div class="box">
+    <h2>Dashboard</h2>
+    <hr>
+    <div >
+        <H3 align="center">Welcome,
+        <t>Goutham M</t>
+    </H3>
+    </div>
+</div>
+<script>
+    $(".tname").hide();
+    function openNav() {
+        $(".tname").show();
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        $(".tname").hide();
+        document.getElementById("mySidenav").style.width = "60px";
+    }
+</script>
+</body>
+</html>

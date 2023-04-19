@@ -1,0 +1,63 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "tb",
+      "patterns": ["what is tb?", "let me know about tb", "tb?" ,"can i know about tb","what exactly is tb"],
+      "responses": [
+        "tb is transaction broker..!, thats all you have to know :-)"
+      ],
+      "private": [
+        "tb is transaction broker..! there are many types of tb(ex: tb5) to get detail information vist this"
+      ]
+    },
+    {
+      "tag": "tb_types",
+      "patterns": ["how many types of tb's are there", "let me know about tb types", "tb types?" ,"can i know about tb types","what exactly are tb types"],
+      "responses": [
+        "i don't know about tb types please vist this link <a href='www.google.com'>www.google.com</a>"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "joke",
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    }
+  ]
+}

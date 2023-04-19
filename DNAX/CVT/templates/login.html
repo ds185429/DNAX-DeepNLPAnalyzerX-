@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: 0;
+          padding: 0;
+          background-size: cover;
+          font-family: sans-serif;
+          background-image: url('../static/img/light-poly.png');
+        }
+
+        .box {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          padding: 0.125rem;
+          transform: translate(-50%, -50%);
+          width: 25rem;
+          box-sizing: border-box;
+          border: 1px solid #dadce0;
+          background-color:white;
+        }
+
+        .box h2 {
+          margin: 0 0 0.125rem;
+          padding: 0;
+          color: #fff;
+          text-align: center;
+          color: #54b948;
+          font-family: "Google Sans", sans-serif;
+          font-size: 24px;
+          font-weight: 400;
+          background-color:white;
+        }
+
+        .box p {
+          font-size: 16px;
+          font-weight: 400;
+          letter-spacing: 0.1px;
+          line-height: 1.5;
+          margin-bottom: 25px;
+          text-align: center;
+          background-color:white;
+        }
+
+        .box .inputBox {
+          position: relative;
+          margin-left: 1.76rem;
+          background-color:white;
+        }
+
+        .box .inputBox input {
+          width: 93%;
+          padding: 0.625rem 10px;
+          font-size: 1rem;
+          letter-spacing: 0.062rem;
+          margin-bottom: 1.875rem;
+          border: 1px solid #ccc;
+        }
+
+        .box .inputBox label {
+          position: absolute;
+          top: 0;
+          left: 10px;
+          padding: 0.625rem 0;
+          font-size: 1rem;
+          color: gray;
+          pointer-events: none;
+          transition: 0.5s;
+        }
+
+        .box .inputBox input:focus ~ label,
+        .box .inputBox input:valid ~ label,
+        .box .inputBox input:not([value=""]) ~ label {
+          top: -1.125rem;
+          left: 10px;
+          color: #54b948;
+          font-size: 0.75rem;
+          background-color: #fff;
+          height: 10px;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+
+        .box .inputBox input:focus {
+          outline: none;
+          border: 0.5px solid #54b948;
+        }
+
+        .box input[type="submit"] {
+            margin-left: 1.76rem;
+            color: #fff;
+            background-color: #54b948;
+            width: 86.5%;
+            padding: 0.625rem 10px;
+            border: 2px solid #54b948;
+        }
+
+        .box input[type="submit"]:hover {
+          background-color: white;
+          color:#54b948;
+          cursor:pointer;
+        }
+
+    </style>
+    <script src="../static/js/jq.js"></script>
+    <script>
+        $(document).ready(function(){
+            {% if invalid_username %}
+                alert("invalid username");
+            {% endif %}
+            {% if invalid_password %}
+                alert("invaild password");
+            {% endif %}
+        });
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h1 style="font-size:30px;text-align:center;padding:15px 0">NCR</h1>
+       <form action="login" method="POST">
+           {% csrf_token %}
+         <div class="inputBox">
+           <input type="text" name="username" required onkeyup="this.setAttribute('value', this.value);" value="" />
+           <label>Username</label>
+         </div>
+         <div class="inputBox">
+           <input type="password" name="password" required onkeyup="this.setAttribute('value', this.value);" value="" />
+           <label>Password</label>
+         </div>
+           <br>
+         <input type="submit" name="sign-in" value="LOG IN" />
+       </form>
+        <br>
+     </div>
+</body>
+</html>

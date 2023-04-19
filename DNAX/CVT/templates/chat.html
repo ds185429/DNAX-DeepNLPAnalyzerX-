@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *
+            {
+                font-family: Raleway,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+            }
+            ::-webkit-scrollbar {
+              width: 10px;
+            }
+            ::-webkit-scrollbar-track {
+              background: #f1f1f1;
+            }
+            ::-webkit-scrollbar-thumb {
+              background: #888;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+              background: #555;
+            }
+            body {
+                margin: 70px 0;
+                padding: 0;
+                background-size: cover;
+                font-family: sans-serif;
+                background-image: url('../static/img/light-poly.png');
+            }
+
+            .box {
+                margin: auto;
+                width: 580px;
+                box-sizing: border-box;
+                border: 1px solid #dadce0;
+                background-color:white;
+                padding: 40px;
+                padding-top:0;
+            }
+            .logoutLblPos{
+                position:fixed;
+                right:10px;
+                top:10px;
+                background-color: black;
+                color: white;
+                padding: 10px;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+            h2
+            {
+                border-left: 5px solid #54b948;
+                padding-left: 5px;
+                font-size: 30px;
+            }
+            .chatbox
+            {
+                background-color: whitesmoke;
+                height: 450px;
+                width: 500px;
+                overflow-y: scroll;
+            }
+            #msg{
+                width: 350px;
+                height: 30px;
+                padding: 5px;
+                {#background-color: whitesmoke;#}
+            }
+            .msgdiv
+            {
+                width: fit-content;
+                max-width: 270px;
+                background-color: #54b948;
+                margin: 10px;
+                padding: 10px 10px;
+                border-radius: 5px;
+                overflow: visible;
+                color: white;
+                font-family: Arial, Helvetica, sans-serif;
+                float: left;
+                clear: both;
+            }
+            .me
+            {
+                background-color: black;
+                color: white;
+                float: right;
+                clear: both;
+            }
+        </style>
+        <script src="../static/js/jq.js"></script>
+        <script>
+        $(document).ready(function(){
+            function send()
+            {
+                var msg=$("#msg").val();
+                $("#msg").val("");
+                $("#chatbox").append("<div class='msgdiv me'>"+msg+"</div>");
+                $.post(
+                "mresponse",
+                {
+                    message:msg
+                },
+                function (data,status) {
+                    $("#chatbox").append("<div class='msgdiv'>"+data+"</div>");
+                    $("#chatbox").animate({ scrollTop: $('#chatbox').prop("scrollHeight")}, 1000);
+                }
+            );
+            }
+            $("#send").click(function () {
+                if( $("#msg").val()!=="")
+                {
+                    send();
+                }
+            });
+            $('#msg').keyup(function(e){
+                if(e.keyCode === 13 && $("#msg").val()!=="")
+                {
+                    send();
+                }
+            });
+        });
+    </script>
+    </head>
+    <body>
+    <a class="logoutLblPos" href="logout">Logout</a>
+        <div class="box">
+            <h2>Welcome to Chatbot</h2>
+            <div class="chatbox" id="chatbox">
+            </div>
+            <br>
+            <div><input type="text" placeholder="Type your text here...." id="msg" >&nbsp;&nbsp;<button id="send" style="width: 125px;font-size: 20px;padding: 5px 0;height: 45px;background-color: #54b948;border: none;color: white;cursor:pointer">Send</button></div>
+        </div>
+    </body>
+</html>

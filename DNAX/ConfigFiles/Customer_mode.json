@@ -1,0 +1,34 @@
+{
+  "test_case_pattern":[
+    "Transaction Start",
+    "Item Sale",
+	"Item Sale",
+	"Item Sale",
+	"Item Sale",
+	"Item Sale",
+    "Cash/Coin Payment",
+    "Transaction End"
+],
+  "operations": {
+    "Transaction Start":["Changing state to SMAttract","Changing state to SMScanAndBag"],
+    "Item Sale":["Changing state to SMBagAndEAS","Changing state to SMScanAndBag"],
+    "Cash/Coin Payment":["Changing state to SMGetFoodStampState","Changing state to SMTakeChange"],
+    "Transaction End":["Changing state to SMTakeReceipt","Changing state to SMThankYou"]
+  },
+  "modules": [
+    ["+EventHandler","-EventHandler","EventHandler",1],
+    ["+isBarcodeValidOperatorPassword","-isBarcodeValidOperatorPassword","isBarcodeValidOperatorPassword",1],
+    ["TBEnterItem",":ITEMSOLD","TBEnterItem",418],
+    [":TOTAL","TBGetTotalDetails","GetTotalDetails",1],
+    [":TENDERACCEPTED","TBBalanceDetails","BalanceDetails",0],
+    [":TRXEND","TBFinish","Transaction end",0],
+    ["+DMScannerEnable","-DMScannerEnable","DMScannerEnable",14],
+    ["+DMMSREnable","-DMMSREnable","DMMSREnable",0],
+    ["+DMCoinAcceptorEnable","-DMCoinAcceptorEnable","DMCoinAcceptorEnable",174],
+    ["+DMScannerDisable","-DMScannerDisable","DMScannerDisable",1],
+    ["+DMMSRDisable","-DMMSRDisable","DMMSRDisable",0],
+    ["+DMCoinAcceptorDisable","-DMCoinAcceptorDisable","DMCoinAcceptorDisable",5],
+    ["+DMDispenseChange","-DMdispenseChange","DMDispenseChange",13813],
+    ["ITEM_SOLD_SCAN","SmOnItemOK","WeighItem",2026]
+  ]
+}

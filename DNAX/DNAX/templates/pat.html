@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include "files.html" %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        select {
+            width: 100%;
+            border: none;
+            padding: 3.5px;
+            background-color: rgba(0,0,0,0.0);;
+            text-align: center;
+        }
+
+        option {
+            text-align-last: center;
+
+        }
+
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-image: url('../static/img/light-poly.png');
+        }
+
+        .box {
+            margin: auto;
+            margin-top: 80px;
+            margin-bottom: 100px;
+            width: 745px;
+            box-sizing: border-box;
+            border: 1px solid #dadce0;
+            background-color: white;
+            padding: 40px;
+        }
+
+        h3 {
+            color: #1b1b1b;
+        }
+
+        h2 {
+            border-left: 5px solid #54b948;
+            padding-left: 5px;
+            font-size: 30px;
+        }
+
+
+        .exef {
+            background-color: #1b1b1b;
+            padding: 5px 10px;
+            color: white;
+            border: 2px solid #1b1b1b;
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        .exef:hover {
+            background-color: white;
+            color: #1b1b1b;
+            cursor: pointer;
+        }
+
+        a {
+            color: #1b1b1b;
+            text-decoration: none !important;
+        }
+
+        form p {
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            line-height: 170px;
+            color: black;
+        }
+
+        .form-input {
+            position: absolute;
+            margin-left: 40px;
+            padding: 0;
+            width: calc(100% - 80px);
+            left: 0;
+            height: 200px;
+            outline: none;
+            opacity: 0;
+            {#border:1px solid black;#}
+        }
+
+        i {
+            cursor: pointer;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th
+        {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+    </style>
+    {% include "css.html" %}
+    <script>
+        $(document).ready(function () {
+            $("#loading").hide();
+            var table=0;
+            let formData = new FormData();
+            formData.append("csrfmiddlewaretoken", '{{ csrf_token }}');
+            var row_count = 1;
+            var removed = [];
+            var testcases = [];
+            var file = [];
+            var options = `
+            {% for i in files %}
+                <option value="{{ i.file.name }}">{{ i.file_name }}</option>
+            {% endfor %}
+            `;
+            $("#fileuploads").change(function () {
+                if(table===0)
+                {
+                     $("#form").append(`<div style="display: flex;flex-wrap: nowrap;width:100%;margin: auto;padding: 5px 0" class="files" >
+                            <table>
+                                <tr">
+                                    <th style="width: 315px;text-align: center;">File Name</th>
+                                    <th style="width: 315px;text-align: center">Select Mode</th>
+                                    <th style="width: 35px;text-align: center;"></th>
+                                </tr>
+                            </table>
+                        </div>`);
+                     table=1;
+                }
+                for (var i = 0; i < $(this).get(0).files.length; ++i) {
+                    file.push($(this).get(0).files[i]);
+                    $("#form").append(
+                        `
+                        <div id="` + row_count + `" style="display: flex;flex-wrap: nowrap;width:100%;margin: auto;padding: 5px 0" class="files" >
+                            <table>
+                                <tr style="background-color: rgba(0,0,0,0.1);">
+                                    <td style="width: 315px;text-align: center;border-left: 5px solid black">` + $(this).get(0).files[i].name + `</td>
+                                    <td style="width: 315px;text-align: center">
+                                        <select id="test_case` + row_count + `" required>
+                                            <option value="">---Select the file name---</option>
+                                            ` + options + `
+                                        </select>
+                                    </td>
+                                    <td style="width: 35px;text-align: center;"><i class="material-icons" style="padding-top: 5px" id="d` + row_count + `">delete</i></td>
+                                </tr>
+                            </table>
+                        </div>
+                        `
+                    );
+                    $("#d" + row_count).click(function () {
+                        {#$("#"+this.id.slice(1,this.id.length)).remove();#}
+                        {#$("#"+this.id.slice(1,this.id.length)).css({"opacity":"0","position":"absolute","top":"-1000px"});#}
+                        $("#" + this.id.slice(1, this.id.length)).hide();
+                        removed.push(this.id.slice(1, this.id.length));
+                    });
+                    row_count += 1;
+                }
+                $("#fileuploads").val("");
+            });
+            $("#execute").click(function () {
+                $("#execute").hide();
+                $("#loading").show();
+                for (var i = 1; i < row_count; i++) {
+                    testcases.push($("#test_case" + i).val());
+                }
+                var k = 1;
+                for (var i = 0; i < file.length; i++) {
+                    if (removed.indexOf((i + 1).toString()) !== -1) {
+                        continue;
+                    }
+                    if (testcases[i] === "") {
+                        testcases = [];
+                        {#file=[];#}
+                        $("#test_case" + (i + 1)).css("border", "1px solid red");
+                        $("#loading").hide();
+                        $("#execute").show();
+                        setTimeout(function () {
+                            $("#test_case" + (i + 1)).css("border", "none");
+                        }, 2000);
+                        return;
+                    }
+                    formData.append("test_case" + (k), testcases[i]);
+                    formData.append("file" + (k), file[i]);
+                    k += 1;
+                }
+                $.ajax({
+                    processData: false,
+                    contentType: false,
+                    type: "POST",
+                    url: 'uploadfile',
+                    data: formData,
+                    success: function (data) {
+                        if (data === "got it") {
+                            window.location.href = "output";
+                        } else {
+                            location.reload();
+                        }
+                    },
+                });
+                e.preventDefault();
+            });
+        });
+    </script>
+</head>
+<body>
+{% include "menu.html" %}
+<div class="box">
+    <h2>DNAX</h2>
+    <hr><br>
+    <form align="center">
+        <h3>Upload Diagnostic files here</h3>
+        <br>
+        <input type="file" name="file" required accept=".zip" class="form-input" id="fileuploads" multiple>
+        <p style="border: 3px dashed #1b1b1b;">Drag your files here or click in this area.</p>
+        <br>
+    </form>
+    <form action="uploadfile" method="POST" enctype="multipart/form-data" id="form">
+        {% csrf_token %}
+    </form>
+    <br><br>
+    <div align="center">
+        <i id="loading" class="fa fa-circle-o-notch fa-spin" style="font-size:48px;color:#54b948"></i>
+        <a id="execute" class="exef"><i class="fa fa-tasks" style="padding: 5px"></i>EXECUTE</a>
+    </div>
+</div>
+</body>
+</html>

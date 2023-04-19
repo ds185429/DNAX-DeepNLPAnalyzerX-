@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    {% include "files.html" %}
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        ul, .myUL {
+            list-style-type: none;
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .myUL {
+            margin: 0;
+            padding: 0;
+            padding-left: 0px;
+            font-size: 18px;
+            font-family: Poppins, 'sans-serif';
+        }
+
+        li {
+            padding: 5px;
+            text-align: justify;
+            font-family: Poppins, 'sans-serif';
+        }
+
+        .caret {
+            cursor: pointer;
+            -webkit-user-select: none; /* Safari 3.1+ */
+            -moz-user-select: none; /* Firefox 2+ */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none;
+        }
+
+        .caret::before {
+            content: "\f196";
+            font-family: FontAwesome;
+            color: black;
+            font-size: 20px;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .caret-down::before {
+            content: "\f147";
+            color: black;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .nested {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .not {
+            color: green;
+        }
+
+        h2 {
+            border-left: 5px solid #54b948;
+            padding-left: 5px;
+            font-size: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-size: 20px;
+            font-weight: normal;
+            font-family: Poppins, 'sans-serif';
+        }
+
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Poppins, 'sans-serif';
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(79, 185, 74, 0.05);
+        }
+
+        .report {
+            height: 55px;
+            width: 100%;
+            border-radius: 2px;
+            background-color: rgba(79, 185, 74, 1);
+            padding: 10px;
+        }
+
+        .report:hover {
+            background-color: #54c948;
+            cursor: pointer;
+        }
+
+    </style>
+    {% include "css.html" %}
+</head>
+<body>
+{% include "menu.html" %}
+<div class="box" onscroll="scrolled()">
+    <h2>Output</h2>
+    <hr>
+    <br>
+    <div class="report" onclick="openreport()">
+        <h3 style="float: left;color: white;font-weight: normal">Report (time taken : <span
+                style="font-family: Poppins">{{ time_taken }}</span>)</h3>
+        <h3 style="float: right;color: white;padding-bottom: 5px"><i class="fa fa-chevron-down" id="report-i"></i></h3>
+    </div>
+    <table id="report-table">
+        <tr>
+            <th>Sno</th>
+            <th>File Name</th>
+            <th>Test Case Name</th>
+            <th>Result</th>
+        </tr>
+        {% for i in report %}
+            <tr>
+                <td>{{ i.0 }}</td>
+                <td>{{ i.1 }}</td>
+                <td>{{ i.2 }}</td>
+                <td>{{ i.3 | safe }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+    {% for i in test_cases %}
+        {{ i | safe }}
+    {% endfor %}
+
+</div>
+<script>
+    var toggler = document.getElementsByClassName("caret");
+    var i;
+    $("#report-table").hide();
+    for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function () {
+            this.parentElement.querySelector(".nested").classList.toggle("active");
+            this.classList.toggle("caret-down");
+        });
+    }
+
+    function openreport() {
+        $("#report-table").toggle();
+
+        if ($("#report-table").is(":visible")) {
+            $("#report-i").attr("class", "fa fa-chevron-up");
+        } else {
+            $("#report-i").attr("class", "fa fa-chevron-down");
+        }
+    }
+
+</script>
+
+</body>
+</html>

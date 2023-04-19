@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            body {
+                margin: 70px 0;
+                padding: 0;
+                background-size: cover;
+                font-family: sans-serif;
+                background-image: url('../static/img/light-poly.png');
+            }
+
+            .box {
+                margin: auto;
+                width: 45%;
+                box-sizing: border-box;
+                border: 1px solid #dadce0;
+                background-color:white;
+                padding: 40px;
+            }
+            .drow
+            {
+                padding:10px 20px;
+            }
+            .drow:nth-child(odd){
+                background-color: whitesmoke;
+            }
+            a{
+                color: #1b1b1b;
+                text-decoration: none;
+            }
+            a:hover
+            {
+                color:#54b948;
+            }
+            .logoutLblPos{
+               position:fixed;
+               right:10px;
+               top:10px;
+                background-color: black;
+                color: white;
+                padding: 10px;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+            .logoutLblPos:hover
+            {
+                color: white;
+            }
+            .addf
+            {
+                background-color: #54b948;
+                padding: 5px 10px;
+                margin: 0;
+                color: white;
+                border: 2px solid #54b948;
+                font-size: 20px;
+                float: right;
+            }
+            .addf:hover
+            {
+                background-color: white;
+            }
+            h2
+            {
+                border-left: 5px solid #54b948;
+                padding-left: 5px;
+                font-size: 30px;
+                font-family: Raleway,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+            }
+            span
+            {
+                font-weight: lighter;
+            }
+        </style>
+    </head>
+    <body>
+    <a class="logoutLblPos" href="logout">Logout</a>
+        <div class="box">
+            <h2>Files <a href="add" class="addf"><span>+</span>&nbsp;add file</a></h2>
+            <br>
+            {% if files %}
+            {% for i in files %}
+            <div class="drow"><a href="update?id={{ i.id }}">{{ i }}</a></div>
+            {% endfor %}
+            {% else %}
+                <div align="center">Empty...!</div>
+            {% endif %}
+        <hr>
+        </div>
+    </body>
+</html>

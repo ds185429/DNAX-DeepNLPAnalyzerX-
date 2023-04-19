@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include "files.html" %}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: #1b1b1b;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #54b948;
+        }
+
+
+        .addf {
+            background-color: #54b948;
+            margin: 0;
+            padding-right: 5px;
+            color: white;
+            border: 2px solid #54b948;
+            font-size: 20px;
+            float: right;
+            height: 35px;
+        }
+
+        .addf:hover {
+            background-color: white;
+        }
+
+        h2 {
+            border-left: 5px solid #54b948;
+            padding-left: 5px;
+            font-size: 30px;
+            font-family: Raleway, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        }
+
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        th
+        {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(79,185,74,0.05);
+        }
+    </style>
+    {% include "css.html" %}
+</head>
+<body>
+{% include "menu.html" %}
+<div class="box">
+    <h2>Modes <a href="add" class="addf" style="text-decoration: none;"><i class="fa fa-plus-circle" style="padding: 5px"></i>&nbsp;Add Mode</a></h2>
+    <hr>
+    <br>
+    {% if files %}
+        <table>
+            <tr>
+                <th>Mode Name</th>
+                <th>Uploaded By</th>
+                <th>Last Updated</th>
+            </tr>
+            {% for i in files %}
+                <tr>
+                    <td><a href="update?id={{ i.id }}" style="text-decoration: none;">{{ i }}</a></td>
+                    <td>--NA--</td>
+                    <td>--NA--</td>
+                </tr>
+                <div class="drow"></div>
+            {% endfor %}
+        </table>
+    {% else %}
+        <div align="center">Empty...!</div>
+    {% endif %}
+</div>
+</body>
+</html>

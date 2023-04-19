@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *
+            {
+                font-family: Raleway,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+            }
+            body {
+                margin: 70px 0;
+                padding: 0;
+                background-size: cover;
+                font-family: sans-serif;
+                background-image: url('../static/img/light-poly.png');
+            }
+
+            .box {
+                margin: auto;
+                width: 580px;
+                box-sizing: border-box;
+                border: 1px solid #dadce0;
+                background-color:white;
+                padding: 40px;
+            }
+            form p{
+                width: 500px;
+                height: 200px;
+                text-align: center;
+                line-height: 170px;
+                color: black;
+            }
+            form input[type="file"]{
+                position: absolute;
+                margin: 0;
+                padding: 0;
+                width: 500px;
+                height: 200px;
+                outline: none;
+                opacity: 0;
+            }
+            form button{
+                margin: 0;
+                color: #fff;
+                background: #54b948;
+                border:2px solid #54b948;
+                width: 508px;
+                height: 35px;
+                margin-top: -20px;
+                margin-left: -4px;
+                transition: all .2s ease;
+                outline: none;
+            }
+            form button:hover{
+                background: white;
+                color: #54b948;
+                cursor:pointer;
+            }
+            form button:active{
+              border:0;
+            }
+            .logoutLblPos{
+                position:fixed;
+                right:10px;
+                top:10px;
+                background-color: black;
+                color: white;
+                padding: 10px;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+            h2
+            {
+                border-left: 5px solid #54b948;
+                padding-left: 5px;
+                font-size: 30px;
+            }
+            input[type="text"]
+            {
+                padding: 2.5px 10px;
+            }
+        </style>
+        <script src="../static/js/jq.js"></script>
+        <script>
+        $(document).ready(function(){
+          $('form input[type="file"]').change(function () {
+            $('form p').text(this.value.replace(/C:\\fakepath\\/i, ''));
+          });
+        });
+    </script>
+    </head>
+    <body>
+    <a class="logoutLblPos" href="logout">Logout</a>
+        <div class="box">
+            <h2>File Update</h2>
+            <form action="addfile" method="POST" enctype="multipart/form-data" >
+            {% csrf_token %}
+                <h3>Company Name &nbsp; <input type="text" name="company" value="{{ company }}"></h3>
+                <h3>Version	&nbsp; <input type="text" name="version" value="{{ version }}"></h3>
+                <h3>Upload file</h3>
+                <h4>Previous File : <a href="/media/{{ file }}">{{ file }}</a></h4>
+                <input type="file" name="file">
+                <p style="border: 3px dashed #1b1b1b;">Drag your files here or click in this area.</p>
+                <br>
+                <button align="center" type="submit" id="sub">Update</button>
+            </form>
+        </div>
+    </body>
+</html>

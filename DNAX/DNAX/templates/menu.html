@@ -1,0 +1,39 @@
+<span class="toparrow" style="font-size:30px;cursor:pointer" onclick="gotop()"><span class="fa fa-arrow-up"></span></span>
+<div style="background-color:#4fb94a" style="max-height: 60px">
+    <a href="index" style=""><img src="../static/img/ncr-logo.jpeg" style="height: 60px;width: auto"/></a>
+</div>
+<div id="mySidenav" class="sidenav" onmouseover="openNav()" onmouseleave="closeNav()">
+    <a href="javascript:history.back()"><i class="fa fa-chevron-left" style="padding: 5px;padding-left:10px;width: 30px"></i><span class="tname">Back</span></a>
+    <a href="index"><i class="fa fa-user" style="padding: 5px;padding-left:10px;width: 30px"></i><span class="tname">Dashboard</span></a>
+    <a href="add-update"><i class="fa fa-files-o" style="padding: 5px;width: 30px"></i><span class="tname">Modes</span></a>
+    <a href="pat"><i class="fa fa-flask" style="padding: 5px;width: 30px"></i><span class="tname">DNAX</span></a>
+    <a href="mailto:gm185194@ncr.com?subject=Feedback for PAT"><i class="fa fa-commenting" style="padding: 5px;width: 30px"></i><span class="tname">Feedback</span></a>
+    <a href="logout"><i class="fa fa-sign-out" style="padding: 5px;width: 30px"><span class="tname">Logout</span></i></a>
+</div>
+<script>
+    $(".tname").hide();
+    function openNav() {
+        $(".tname").show();
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        $(".tname").hide();
+        document.getElementById("mySidenav").style.width = "60px";
+    }
+
+    function gotop() {
+         $('html, .box').animate({scrollTop:0}, 'slow');
+    }
+    $(".toparrow").hide();
+    function scrolled() {
+        if($(".box").scrollTop()>=100)
+        {
+            $(".toparrow").show(300);
+        }
+        else
+        {
+            $(".toparrow").hide(300);
+        }
+    }
+</script>

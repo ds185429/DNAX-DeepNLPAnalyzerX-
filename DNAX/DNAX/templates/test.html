@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PAT</title>
+    <script src="../static/js/jq.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../static/css/bootstarpmin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script src="../static/js/bootstrapmin.js"></script>
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        ul, .myUL {
+            list-style-type: none;
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .myUL {
+            margin: 0;
+            padding: 0;
+            padding-left: 0px;
+            font-size: 18px;
+            font-family: Poppins,'sans-serif';
+        }
+
+        li {
+            padding: 5px;
+            text-align: justify;
+            font-family: Poppins,'sans-serif';
+        }
+
+        .caret {
+            cursor: pointer;
+            -webkit-user-select: none; /* Safari 3.1+ */
+            -moz-user-select: none; /* Firefox 2+ */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none;
+        }
+
+        .caret::before {
+            content: "\f196";
+            font-family: FontAwesome;
+            color: black;
+            font-size: 20px;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .caret-down::before {
+            content: "\f147";
+            color: black;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .nested {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .not {
+            color: green;
+        }
+        h2 {
+            border-left: 5px solid #54b948;
+            padding-left: 5px;
+            font-size: 30px;
+        }
+
+    </style>
+    <style>
+    * {
+            font-family: Raleway, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        }
+    .sidenav {
+        height: 100%;
+        position: fixed;
+        z-index: 10;
+        top: 60px;
+        left: 0;
+        width: 60px;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+
+    .sidenav a {
+        padding: 10px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #f1f1f1;
+        display: block;
+        transition: 0.5s;
+        white-space: nowrap;
+    }
+
+    .sidenav a:hover {
+        border-left: 5px solid white;
+    }
+
+    .tname {
+        padding-left: 10px;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+    .box{
+        position: fixed;
+            top: 65px;
+            left: 65px;
+            margin: 0;
+            width: calc(100% - 70px);
+            height: calc(100% - 70px);
+            box-sizing: border-box;
+            border: 1px solid #dadce0;
+            background-color: whitesmoke;
+            padding: 40px;
+            overflow-y: scroll;
+    }
+    table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-size: 20px;
+            font-weight: normal;
+            font-family: Poppins,'sans-serif';
+        }
+        th
+        {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Poppins,'sans-serif';
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(79,185,74,0.05);
+        }
+        .report{
+            height: 55px;
+            width: 100%;
+            background-color: rgba(79,185,74,1);
+            padding: 10px;
+        }
+        .report:hover{
+            background-color:#54c948;
+            cursor: pointer;
+        }
+
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding-top: 15px;
+        }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+    }
+</style>
+</head>
+<body>
+<div style="background-color:#4fb94a" style="max-height: 60px">
+    <a href="index" style=""><img src="../static/img/ncr-logo.jpeg" style="height: 60px;width: auto"/></a>
+</div>
+<div id="mySidenav" class="sidenav" onmouseover="openNav()" onmouseleave="closeNav()">
+    <a href="javascript:history.back()"><i class="fa fa-chevron-left" style="padding: 5px;padding-left:10px;width: 30px"></i><span class="tname">Back</span></a>
+    <a href="index"><i class="fa fa-user" style="padding: 5px;padding-left:10px;width: 30px"></i><span class="tname">Dashboard</span></a>
+    <a href="add-update"><i class="fa fa-files-o" style="padding: 5px;width: 30px"></i><span class="tname">Config Files</span></a>
+    <a href="test"><i class="fa fa-flask" style="padding: 5px;width: 30px"></i><span class="tname">PAT</span></a>
+    <a href="logout"><i class="fa fa-sign-out" style="padding: 5px;width: 30px"><span class="tname">Logout</span></i></a>
+</div>
+<script>
+    $(".tname").hide();
+    function openNav() {
+        $(".tname").show();
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        $(".tname").hide();
+        document.getElementById("mySidenav").style.width = "60px";
+    }
+    function openreport() {
+        $("#report-table").toggle();
+
+        if ($("#report-table").is(":visible")) {
+            $("#report-i").attr("class", "fa fa-chevron-up");
+        } else {
+            $("#report-i").attr("class", "fa fa-chevron-down");
+        }
+    }
+</script>
+<div class="box">
+    <h2>Output</h2>
+<hr>
+<br>
+    <div class="report" onclick="openreport()">
+        <h3 style="float: left;color: white;font-weight: normal">Report (time taken : <span style="font-family: Poppins">{{ time_taken }}</span>)</h3>
+        <h3 style="float: right;color: white;padding-bottom: 5px"><i class="fa fa-chevron-down" id="report-i"></i></h3>
+    </div>
+    <table id="report-table">
+        <tr>
+            <th>Sno</th>
+            <th>File Name</th>
+            <th>Test Case Name</th>
+            <th>Result</th>
+        </tr>
+        {% for i in report %}
+        <tr>
+            <td>{{ i.0 }}</td>
+            <td>{{ i.1 }}</td>
+            <td>{{ i.2 }}</td>
+            <td>{{ i.3 | safe }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+{% for i in test_cases %}
+    {{ i | safe }}
+{% endfor %}
+
+</div>
+<script>
+    var toggler = document.getElementsByClassName("caret");
+    var i;
+    $("#report-table").hide();
+    for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function () {
+            this.parentElement.querySelector(".nested").classList.toggle("active");
+            this.classList.toggle("caret-down");
+        });
+    }
+</script>
+
+</body>
+</html>

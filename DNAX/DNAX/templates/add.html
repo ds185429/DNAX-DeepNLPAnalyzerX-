@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include "files.html" %}
+    <style>
+        form p {
+            width: 500px;
+            height: 200px;
+            text-align: center;
+            line-height: 170px;
+            color: black;
+        }
+
+        form input[type="file"] {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            width: 500px;
+            height: 200px;
+            outline: none;
+            opacity: 0;
+        }
+
+        form button {
+            margin: 0;
+            color: #fff;
+            background: #54b948;
+            border: 2px solid #54b948;
+            width: 508px;
+            height: 35px;
+            margin-top: -20px;
+            margin-left: -4px;
+            transition: all .2s ease;
+            outline: none;
+        }
+
+        form button:hover {
+            background: white;
+            color: #54b948;
+            cursor: pointer;
+        }
+
+        form button:active {
+            border: 0;
+        }
+
+        h2 {
+            border-left: 5px solid #54b948;
+            padding-left: 5px;
+            font-size: 30px;
+        }
+
+        input[type="text"] {
+            padding: 2.5px 10px;
+            width: 500px;
+        }
+    </style>
+    {% include "css.html" %}
+    <script src="../static/js/jq.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('form input[type="file"]').change(function () {
+                $('form p').text(this.value.replace(/C:\\fakepath\\/i, ''));
+            });
+        });
+    </script>
+</head>
+<body>
+{% include "menu.html" %}
+<div class="box">
+    <h2>Add New Mode</h2>
+    <hr>
+    <br>
+    <form action="addfile" method="POST" enctype="multipart/form-data" style="margin-left: calc(70px + 28%)">
+        {% csrf_token %}
+        <h3>Mode Name </h3>
+        <input type="text" name="file_name" required>
+        <br>
+        <br>
+        <h3>Upload Mode</h3>
+        <input type="file" name="file" required>
+        <p style="border: 3px dashed #1b1b1b;">Drag your files here or click in this area.</p>
+        <br>
+        <button align="center" type="submit" id="sub">save</button>
+    </form>
+</div>
+</body>
+</html>
