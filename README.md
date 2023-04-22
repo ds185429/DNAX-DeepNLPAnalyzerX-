@@ -37,7 +37,7 @@ python manage.py runserver
 ```
 ----------------------------------------
 
-> ## **Problem Statement**
+## **Problem Statement**
 
 ----------------------------------------
 
@@ -48,7 +48,7 @@ python manage.py runserver
 
 ---------------------------------------
 
-> ## **Proposed Solution**
+## **Proposed Solution**
 
 --------------------------------------
 
@@ -63,7 +63,7 @@ python manage.py runserver
 
 -------------------------------------
 
-> ## **Current Process**
+## **Current Process**
 
 -------------------------------------
 
@@ -89,7 +89,7 @@ python manage.py runserver
 
 ------------------------------------
 
-> ## **Using Our Solution**
+## **Using Our Solution**
 
 ------------------------------------
 
@@ -125,7 +125,7 @@ python manage.py runserver
 
 -----------------------------------
 
-> ## **Phase I - Deep Learning** 
+## **Phase I - Deep Learning** 
 
 ----------------------------------
 
@@ -142,7 +142,7 @@ Deep learning provides the benefit of **continual learning** which means if it f
 
 ------------------------------------
 
-> ## **Phase II – NLP Algorithm**
+## **Phase II – NLP Algorithm**
 
 ------------------------------------
 
@@ -235,7 +235,7 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 ---------------------------------------------------
 
-> ## **Technology Stack**
+## **Technology Stack**
 
 ---------------------------------------------------
 
@@ -257,7 +257,7 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 ----------------------------------------------------
 
-> ## **With/without our tool : A Matrix co-relation**
+## **With/without our tool : A Matrix co-relation**
 
 ----------------------------------------------------
 
@@ -265,7 +265,7 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 ----------------------------------------------------
 
-> ## **Prototype/Demo**
+## **Prototype/Demo**
 
 ----------------------------------------------------
 
@@ -295,7 +295,7 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 ----------------------------------------------------
 
-> ## **Future Scope**
+## **Future Scope**
 
 ----------------------------------------------------
 
@@ -315,7 +315,7 @@ Create website deployment-ready with minimal desktop application dependency.
 
 ----------------------------------------------------
 
-> ## **Team Members**
+## **Team Members**
 
 ----------------------------------------------------
 
