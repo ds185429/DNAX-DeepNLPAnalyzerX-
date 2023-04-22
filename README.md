@@ -293,7 +293,8 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 ![](DNAX/images/Scenario_2_output.png)
 
-----------------------------------------------------
+<br />
+
 
 ## Future Scope
 
