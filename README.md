@@ -35,22 +35,20 @@ Finally, run the development server:
 ```bash
 python manage.py runserver
 ```
-----------------------------------------
+<br />
 
 ## Problem Statement
 
-----------------------------------------
 
 1. Log analysis is crucial for software development success,maintenance & support as it helps identify issues and their root cause. 
 2. Delays in providing solutions to customers are common and can be attributed to various factors such as inefficient processes, inadequate resources, communication breakdowns, or logistical challenges.
 3. Redundant analysis of the problem, incorrect team assignment, and difficulty locating relevant resources are major Contributors to such delays 
 4. Delay harms customer satisfaction, raises support expenses, and risks damaging the company's image.
 
----------------------------------------
+<br />
 
 ## Proposed Solution
 
---------------------------------------
 
 1. DNAX is a tool that assists Customer & NCR personnel by providing guidance on how to resolve problems and identifying the appropriate person to assign the issue to.
 2. Notifies customers & NCR about NCR-related issues and suggests previously successful solutions that do not require any changes to the code. 
@@ -61,11 +59,10 @@ python manage.py runserver
 7. Provide more detailed analysis results to other teams in NCR to improve issue assignment.
 
 
--------------------------------------
+<br />
 
 ## Current Process
 
--------------------------------------
 
 ![](DNAX/images/Current_Process.png)
 
@@ -87,11 +84,10 @@ python manage.py runserver
 
 **End**: The issue is resolved.
 
-------------------------------------
+<br />
 
 ## Using Our Solution
 
-------------------------------------
 
 ![](DNAX/images/Using_Our_Solution.png)
 
@@ -123,11 +119,10 @@ python manage.py runserver
 
 **End**: The issue is resolved.
 
------------------------------------
+<br />
 
 ## Phase I - Deep Learning
 
-----------------------------------
 
 The first question that comes to mind when we hear "Deep Learning" is: **why should we use it to analyze log errors?**
 
@@ -140,11 +135,10 @@ Our <u>**NLP algorithm**</u> will have greater availability of solutions for cus
 Deep learning provides the benefit of **continual learning** which means if it fails to identify a pattern, it can learn about that pattern in the future without wasting time on retraining.
 
 
-------------------------------------
+<br />
 
 ## Phase II – NLP Algorithm
 
-------------------------------------
 
 **Why use NLP when string matching can easily achieve this task?**
 
@@ -233,11 +227,10 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 ````
 
----------------------------------------------------
+<br />
 
 ## Technology Stack
 
----------------------------------------------------
 
 1. Website Development:
    1. HTML/CSS 
@@ -255,19 +248,17 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 4. Database 
    1. SQL / NoSQL
 
-----------------------------------------------------
+<br />
 
 ## With/without our tool : A Matrix co-relation
 
-----------------------------------------------------
 
 ![](DNAX/images/Matrix_Co_Relation.jpg)
 
-----------------------------------------------------
+<br />
 
 ## Prototype/Demo
 
-----------------------------------------------------
 
 > **Scenario 1: Customer Mode**
 <br />
@@ -314,11 +305,10 @@ Make each component a microservice for use in future tools.
 
 Create website deployment-ready with minimal desktop application dependency.
 
-----------------------------------------------------
+<br />
 
 ## Team Members
 
-----------------------------------------------------
 
 **Divyansh Srivastava, PS Engineer - II**
 <br />
