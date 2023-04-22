@@ -91,7 +91,7 @@ python manage.py runserver
 
 ![](DNAX/images/Using_Our_Solution.png)
 
-> **Scenario 1: Customer Mode**
+> #### Scenario 1: Customer Mode
 
 **Start**: A customer finds an issue.
 
@@ -105,7 +105,7 @@ python manage.py runserver
 
 <br />
 
-> **Scenario 2: L3 Team Mode**
+> #### Scenario 2: L3 Team Mode
 
 **Start**: The L3 Team utilizes DNAX Tool for troubleshooting.
 
@@ -152,9 +152,9 @@ NLP techniques are useful for recognizing similarities between text strings even
 
 **DEMO - NLP Algorithm**
 
-> **Scenario 1**: It identifies error log pattern and offers resolution steps.
+> #### Scenario 1: It identifies error log pattern and offers resolution steps.
 
-> **Error Text: Device returns error=10000**
+> #### Error Text: Device returns error=10000
 
 ```python
 soundex = Soundex()
@@ -180,9 +180,9 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 ````
 <br/>
 
-> **Scenario 2**: It identifies similar error log pattern and offers resolution steps.
+> #### Scenario 2: It identifies similar error log pattern and offers resolution steps.
 
-> **Error Text: Devicereturnserror=10000**
+> #### Error Text: Devicereturnserror=10000
 
 ```python
 items = []
@@ -204,9 +204,9 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 ````
 <br />
 
-> **Scenario 3**: It identifies similar error log pattern even wrong pattern came and offers resolution steps.
+> #### Scenario 3: It identifies similar error log pattern even wrong pattern came and offers resolution steps.
 
-> **Error Text: Devicir returns error=10000**
+> #### Error Text: Devicir returns error=10000
 
 ```python
 items = []
@@ -260,7 +260,7 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 ## Prototype/Demo
 
 
-> **Scenario 1: Customer Mode**
+> #### Scenario 1: Customer Mode
 <br />
 
 **Input:**
@@ -273,7 +273,7 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 <br />
 
-> **Scenario 2: L3 Team Mode**
+> #### Scenario 2: L3 Team Mode
 <br />
 
 **Input**
@@ -310,23 +310,21 @@ Create website deployment-ready with minimal desktop application dependency.
 ## Team Members
 
 
-**Divyansh Srivastava, PS Engineer - II**
-<br />
+#### Divyansh Srivastava, PS Engineer - II
+
 
 ![](DNAX/images/Divyansh.png)
 <br />
-
-**Kalyan Reddi Maddireddi, PS Engineering Manager**
-<br />
+#### Kalyan Reddi Maddireddi, PS Engineering Manager
 ![](DNAX/images/Kalyan.png)
 <br />
 
-**Mithilesh Kumar Devaki, GPS SCO Developer** <br />
+#### Mithilesh Kumar Devaki, GPS SCO Developer
 
 ![](DNAX/images/Mithilesh.png)
 <br />
 
-**Seshi Bhargavi Reddy Demada, PS Engineer III** <br />
+#### Seshi Bhargavi Reddy Demada, PS Engineer III
 
 ![](DNAX/images/Seshi.png)
 
