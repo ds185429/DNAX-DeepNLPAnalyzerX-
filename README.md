@@ -1,10 +1,10 @@
 [![Python Version](https://img.shields.io/badge/python-3.7-brightgreen.svg)](https://python.org)
 [![Django Version](https://img.shields.io/badge/django-2.1-brightgreen.svg)](https://djangoproject.com)
 
-# **DNAX ( DeepNLPAnalyzerX )**
+# DNAX ( DeepNLPAnalyzerX )
 The tool informs customers &amp; NCR if the issue is related to NCR and provides past successful resolutions that don't require code changes.
 
->  **Running the Project Locally**
+>  Running the Project Locally
 
 First, clone the repository to your local machine:
 
@@ -37,7 +37,7 @@ python manage.py runserver
 ```
 ----------------------------------------
 
-## **Problem Statement**
+## Problem Statement
 
 ----------------------------------------
 
@@ -48,7 +48,7 @@ python manage.py runserver
 
 ---------------------------------------
 
-## **Proposed Solution**
+## Proposed Solution
 
 --------------------------------------
 
@@ -63,7 +63,7 @@ python manage.py runserver
 
 -------------------------------------
 
-## **Current Process**
+## Current Process
 
 -------------------------------------
 
@@ -89,7 +89,7 @@ python manage.py runserver
 
 ------------------------------------
 
-## **Using Our Solution**
+## Using Our Solution
 
 ------------------------------------
 
@@ -125,7 +125,7 @@ python manage.py runserver
 
 -----------------------------------
 
-## **Phase I - Deep Learning** 
+## Phase I - Deep Learning
 
 ----------------------------------
 
@@ -142,7 +142,7 @@ Deep learning provides the benefit of **continual learning** which means if it f
 
 ------------------------------------
 
-## **Phase II – NLP Algorithm**
+## Phase II – NLP Algorithm
 
 ------------------------------------
 
@@ -158,9 +158,9 @@ NLP techniques are useful for recognizing similarities between text strings even
 
 **DEMO - NLP Algorithm**
 
-**Scenario 1**: It identifies error log pattern and offers resolution steps.
+> **Scenario 1**: It identifies error log pattern and offers resolution steps.
 
-**Error Text: Device returns error=10000**
+> **Error Text: Device returns error=10000**
 
 ```python
 soundex = Soundex()
@@ -186,9 +186,9 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 ````
 <br/>
 
-**Scenario 2**: It identifies similar error log pattern and offers resolution steps.
+> **Scenario 2**: It identifies similar error log pattern and offers resolution steps.
 
-**Error Text: Devicereturnserror=10000**
+> **Error Text: Devicereturnserror=10000**
 
 ```python
 items = []
@@ -210,9 +210,9 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 ````
 <br />
 
-**Scenario 3**: It identifies similar error log pattern even wrong pattern came and offers resolution steps.
+> **Scenario 3**: It identifies similar error log pattern even wrong pattern came and offers resolution steps.
 
-**Error Text: Devicir returns error=10000**
+> **Error Text: Devicir returns error=10000**
 
 ```python
 items = []
@@ -235,7 +235,7 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 ---------------------------------------------------
 
-## **Technology Stack**
+## Technology Stack
 
 ---------------------------------------------------
 
@@ -257,7 +257,7 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 ----------------------------------------------------
 
-## **With/without our tool : A Matrix co-relation**
+## With/without our tool : A Matrix co-relation
 
 ----------------------------------------------------
 
@@ -265,11 +265,11 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 ----------------------------------------------------
 
-## **Prototype/Demo**
+## Prototype/Demo
 
 ----------------------------------------------------
 
-**Scenario 1: Customer Mode**
+> **Scenario 1: Customer Mode**
 <br />
 
 **Input:**
@@ -282,7 +282,7 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 <br />
 
-**Scenario 2: L3 Team Mode**
+> **Scenario 2: L3 Team Mode**
 <br />
 
 **Input**
@@ -295,7 +295,7 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 ----------------------------------------------------
 
-## **Future Scope**
+## Future Scope
 
 ----------------------------------------------------
 
@@ -315,7 +315,7 @@ Create website deployment-ready with minimal desktop application dependency.
 
 ----------------------------------------------------
 
-## **Team Members**
+## Team Members
 
 ----------------------------------------------------
 
