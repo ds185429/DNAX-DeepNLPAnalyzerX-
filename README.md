@@ -64,7 +64,7 @@ python manage.py runserver
 ## Current Process
 
 
-![](DNAX/images/Current_Process.png)
+![](images/Current_Process.png)
 
 **Start**: A customer reports an issue.
 
@@ -89,7 +89,7 @@ python manage.py runserver
 ## Using Our Solution
 
 
-![](DNAX/images/Using_Our_Solution.png)
+![](images/Using_Our_Solution.png)
 
 > #### Scenario 1: Customer Mode
 
@@ -253,7 +253,7 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 ## With/without our tool : A Matrix co-relation
 
 
-![](DNAX/images/Matrix_Co_Relation.jpg)
+![](images/Matrix_Co_Relation.jpg)
 
 <br />
 
@@ -265,11 +265,11 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 **Input:**
 
-![](DNAX/images/Scenario_1_Input.png)
+![](images/Scenario_1_Input.png)
 
 **Output:**
 
-![](DNAX/images/Scenario_1_output.png)
+![](images/Scenario_1_output.png)
 
 <br />
 
@@ -278,11 +278,11 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 **Input**
 
-![](DNAX/images/Scenario_2_Input.png)
+![](images/Scenario_2_Input.png)
 
 **Output:**
 
-![](DNAX/images/Scenario_2_output.png)
+![](images/Scenario_2_output.png)
 
 
 <br />
@@ -313,19 +313,19 @@ Create website deployment-ready with minimal desktop application dependency.
 #### Divyansh Srivastava, PS Engineer - II
 
 
-![](DNAX/images/Divyansh.png)
+![](images/Divyansh.png)
 <br />
 #### Kalyan Reddi Maddireddi, PS Engineering Manager
-![](DNAX/images/Kalyan.png)
+![](images/Kalyan.png)
 <br />
 
 #### Mithilesh Kumar Devaki, GPS SCO Developer
 
-![](DNAX/images/Mithilesh.png)
+![](images/Mithilesh.png)
 <br />
 
 #### Seshi Bhargavi Reddy Demada, PS Engineer III
 
-![](DNAX/images/Seshi.png)
+![](images/Seshi.png)
 
 
