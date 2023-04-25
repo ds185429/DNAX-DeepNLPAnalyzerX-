@@ -252,6 +252,24 @@ Install CADD_Full_Update_v1.9+ Patch_v3.4 or above!!!
 
 ## With/without our tool : A Matrix co-relation
 
+Before we begin analyzing the correlation matrix with or without our solution, let's first determine the number of diagnostic files collected in a day.
+
+Active Customer Count : **224**
+
+Countries Wise :
+1. APAC : 19
+2. CLA : 15
+3. EMEA : 94
+4. Japan : 7
+5. NAMER : 89
+
+Customer Size = **500+** Lanes(avg.) 
+
+No. of Diagnostic Files Collected in a Day = Differ based on Customer 
+<br />Approx. = **150 * 500** = **75000**
+
+US Dollar per Man Hour = **17** (avg.) (**Low-Cost Centers**)
+<br />
 
 ![](images/Matrix_Co_Relation.jpg)
 
