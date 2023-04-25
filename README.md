@@ -330,20 +330,21 @@ Create website deployment-ready with minimal desktop application dependency.
 
 #### Divyansh Srivastava, PS Engineer - II
 
-
-![](images/Divyansh.jpg)
+<img src="images/Divyansh.jpg" data-canonical-src="images/Divyansh.jpg" width="400" height="400" />
 <br />
+
 #### Kalyan Reddi Maddireddi, PS Engineering Manager
-![](images/Kalyan.png)
+<img src="images/Kalyan.png" data-canonical-src="images/Kalyan.png" width="400" height="400" />
+
 <br />
 
 #### Mithilesh Kumar Devaki, GPS SCO Developer
 
-![](images/Mithilesh.png)
+<img src="images/Mithilesh.png" data-canonical-src="images/Mithilesh.png" width="400" height="400" />
+
 <br />
 
 #### Seshi Bhargavi Reddy Demada, PS Engineer III
-
-![](images/Seshi.png)
+<img src="images/Seshi.png" data-canonical-src="images/Seshi.png" width="400" height="400" />
 
 
