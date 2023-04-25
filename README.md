@@ -275,6 +275,13 @@ US Dollar per Man Hour = **17** (avg.) (**Low-Cost Centers**)
 
 <br />
 
+#### Presentation of Graph for each criteria in USD(%)
+
+![](images/Graph.png)
+
+**Note** : The graph is based on a single diagnostic file.
+
+
 ## Prototype/Demo
 
 
